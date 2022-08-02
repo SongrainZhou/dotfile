@@ -1,5 +1,6 @@
 " Key Remapping" Key Remapping
 
+" syntax on
 language en_US.UTF-8
 set mouse=a
 let g:python3_host_prog='/Users/zhousongran/opt/anaconda3/envs/pt/bin/python'
@@ -10,7 +11,6 @@ set pumheight=10
 set ignorecase
 set smartcase
 set scrolloff=5
-
 
 
 call plug#begin('~/.vim/plugged')
@@ -26,15 +26,19 @@ Plug 'scrooloose/nerdtree'
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-let g:airline_theme='molokai'
+let g:airline_theme='onedark'
+
+Plug 'navarasu/onedark.nvim'
+
+"Plug 'udalov/kotlin-vim'
 
 Plug 'jiangmiao/auto-pairs'
 
 " Color Schemes
-Plug 'flazz/vim-colorschemes'
+"Plug 'flazz/vim-colorschemes'
 " Python syntax highlighting script for Vim
-Plug 'hdima/python-syntax'
-let python_highlight_all=1
+"Plug 'hdima/python-syntax'
+"let python_highlight_all=1
 
 
 " Coc.nvim//////////////////////////////////////////////////////////////////////////
@@ -115,8 +119,8 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 nmap <leader>rn <Plug>(coc-rename)
 
 " Formatting selected code.
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
+" xmap <leader>f  <Plug>(coc-format-selected)
+" nmap <leader>f  <Plug>(coc-format-selected)
 
 augroup mygroup
 	autocmd!
@@ -182,7 +186,7 @@ let g:formatters_hpp=['astyle']
 Plug 'tell-k/vim-autopep8'
 let g:autopep8_disable_show_diff=1
 autocmd FileType python noremap <buffer> <F8> :call Autopep8()<CR>
-let g:autopep8_on_save = 1
+let g:autopep8_on_save = 0
 
 " Syntastic 即时检测代码错误
 Plug 'scrooloose/syntastic'
@@ -233,23 +237,33 @@ Plug 'fatih/vim-go'
 "Plug 'nsf/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
 
 " Initialize plugin system
+
+Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
+let g:semshi#filetypes=['python']
+let g:semshi#excluded_hl_groups=[]
+let g:semshi#mark_selected_nodes=1
+
+
+
 call plug#end()
 
 
 
 
 
-syntax on
 
 " set CTRL-e to be NERDTreeToggle
 map<silent> <C-e> :NERDTreeToggle<CR>
 map s <nop>
 nmap <C-s> :w<CR>
 imap <C-s> <ESC>:w<CR>
-
+imap <C-l> <ESC>la
 map <C-q> <ESC>:q<CR>
+
 "map R <ESC>:source ~/.config/nvim/init.vim <CR>
-colorscheme gruvbox
+let g:onedark_config={'style':'darker'}
+colorscheme onedark
+
 " set number and relativenumber
 set nu
 set relativenumber
