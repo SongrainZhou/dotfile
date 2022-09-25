@@ -135,3 +135,4 @@ export LANG=en_US.UTF-8
 
 # golang
 
+source /opt/homebrew/Cellar/zsh-syntax-highlighting/0.7.1/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

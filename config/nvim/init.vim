@@ -22,6 +22,8 @@ call plug#begin('~/.vim/plugged')
 "   - e.g. `call plug#begin('~/.vim/plugged')`
 "   - Avoid using standard Vim directory names like 'plugin'
 
+Plug 'yggdroot/indentline'
+let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 Plug 'scrooloose/nerdtree'
 
 Plug 'vim-airline/vim-airline'
@@ -255,13 +257,13 @@ call plug#end()
 " set CTRL-e to be NERDTreeToggle
 map<silent> <C-e> :NERDTreeToggle<CR>
 map s <nop>
-nmap <C-s> :w<CR>
-imap <C-s> <ESC>:w<CR>
+nmap <C-s> :w<CR>zz
+imap <C-s> <ESC>:w<CR>zz
 imap <C-l> <ESC>la
 map <C-q> <ESC>:q<CR>
 
 "map R <ESC>:source ~/.config/nvim/init.vim <CR>
-let g:onedark_config={'style':'darker'}
+" let g:onedark_config={'style':'darker'}
 colorscheme onedark
 
 " set number and relativenumber
@@ -279,7 +281,11 @@ set cindent
 set autoindent
 
 set smarttab
-""inoremap ' ''<ESC>i
+" 让按下j时同时使下一行在竖直位置上居中
+noremap j gjzz
+noremap k gkzz
+noremap o zzo
+"inoremap ' ''<ESC>i
 ""inoremap " ""<ESC>i
 ""inoremap ( ()<ESC>i
 ""inoremap [ []<ESC>i
