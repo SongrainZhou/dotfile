@@ -136,3 +136,16 @@ export LANG=en_US.UTF-8
 # golang
 
 source /opt/homebrew/Cellar/zsh-syntax-highlighting/0.7.1/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+export PATH=/Users/zhousongran/Downloads/phantomjs-2.1.1-macosx/bin:$PATH
+export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottles
+
+# proxy
+alias proxy='export https_proxy=http://127.0.0.1:7890'
+alias unproxy='unset https_proxy'
+
+alias ca='conda activate'
+alias soz='source ~/.zshrc'
+alias son='source ~/.config/nvim/init.vim'
+
+alias ta='tmux attach -t'

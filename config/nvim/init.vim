@@ -11,6 +11,7 @@ set pumheight=10
 set ignorecase
 set smartcase
 set scrolloff=5
+let mapleader=" "
 
 
 call plug#begin('~/.vim/plugged')
@@ -285,6 +286,12 @@ set smarttab
 noremap j gjzz
 noremap k gkzz
 noremap o zzo
+
+nmap <leader>bp :bp<cr>
+nmap <leader>bn :bn<cr>
+nmap <leader>v :vsp<space>
+nmap <leader>s :sp<space>
+
 "inoremap ' ''<ESC>i
 ""inoremap " ""<ESC>i
 ""inoremap ( ()<ESC>i
